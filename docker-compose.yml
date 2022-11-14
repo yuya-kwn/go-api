@@ -1,10 +1,9 @@
-version: "3.8"
+version: '3'
 services:
-  app:
-    build: .
-    container_name: app_c
-    ports:
-      - "8080:8000"
-    volumes:
-      - ./src:/app
+  web:
+    build: ./web
     tty: true
+    volumes:
+      - ./web:/go/src
+    ports:
+      - "3000:3000"
